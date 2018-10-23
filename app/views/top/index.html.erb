@@ -1,0 +1,15 @@
+<div class="top">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">ShareMe</a>
+  </nav>
+  <div class="loginPage">
+    <div class="container">
+      <%= image_tag "top-image.jpg", class:"top-page" %>
+      <div class="loginPage_contents">
+        <h1 class="h4 loginPage_contents_title">あなたの新しいを共有しよう</h1>
+        <%= link_to "ログインする", new_user_session_path, class: "btn loginPage_contents_btn" %>
+        <%= link_to "新規登録する", new_user_registration_path, class: "btn loginPage_contents_btn2" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-page{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: absolute;
+}
+
+.loginPage {
+  &_contents {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    top: 5%;
+    &_title {
+      margin-top: 12vh;
+      font-weight: bold;
+      font-size: 2em;
+    }
+    &_btn {
+      display: block;
+      max-width: 400px;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 30px;
+      background: #fd5068;
+      color: #fff;
+      top: 30%;
+      left:20%;
+      position: absolute;
+    }
+    &_btn2{
+      display: block;
+      max-width: 400px;
+      padding: 20px;
+      margin: 0 auto;
+      border-radius: 30px;
+      background: #fd5068;
+      color: #fff;
+      top: 30%;
+      left:40%;
+      position: absolute;
+    }
+  }
+}
