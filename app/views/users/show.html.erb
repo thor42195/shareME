@@ -16,4 +16,16 @@
       </div>
     <% end %>
   </div>
+  <div class="container">
+    <h2>お気に入り一覧</h2>
+  <div class="row">
+    <% @favorites_pictures.each do |favorites| %>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <%= image_tag(favorites.postimage) if favorites.postimage %>
+    <%end %>
+    </div>
+  </div>
+</div>
 </div>

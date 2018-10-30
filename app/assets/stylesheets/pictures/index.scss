@@ -1,0 +1,39 @@
+body{
+	background-color: #fafafa;
+}
+
+.card-header{
+	background-color: white;
+}
+.card-title{
+	display: inline-block;
+	float:left;
+	font-size: 3em;
+	padding:10px;
+}
+.card-body{
+	width: 80%;
+}
+.card-content{
+	display: inline-block;
+	float: center;
+	padding:10px;
+}
+.card-image{
+	display: inline-block;
+	float:center;
+	padding: 20px;
+	height: 100%;
+  width: 130%;
+}
+
+.card-image image{
+	height: 100%;
+  width: 100%;
+
+}
+
+.picture-edit{
+	display: inline-block;
+	float:right;
+}

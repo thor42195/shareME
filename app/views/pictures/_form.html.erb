@@ -1,0 +1,32 @@
+<div class="postPage">
+  <div class="container">
+    <%= form_with(model: @picture, local: true) do |form| %>
+    <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @picture.errors.count %>件のエラーがあります</h2>
+      <ul>
+          <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <label for="file_photo" class="rounded-circle userProfileImg">
+      <div class="userProfileImg_description">画像をアップロード</div>
+      <i class="fas fa-camera fa-3x"></i>
+      <%= image_tag(@picture.postimage.url) if @picture.postimage.url %>
+      <%= form.file_field :postimage, id: "file_photo" %>
+    </label>
+    <div class="postImgPreview" id="postImgPreview">
+      <img id="thumbnail" class="postImgPreview_content" accept="image/*" src="">
+      <p class="userImgPreview_text">画像をアップロード済み</p>
+    </div>
+    <div class="picture_title">
+        <%= form.text_field :content %>
+    </div>
+    <div class="text-center">
+    <%= form.submit class: "btn submitBtn"%>
+    </div>
+    <% end %>
+  </div>
+</div>
