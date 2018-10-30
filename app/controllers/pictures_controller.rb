@@ -26,6 +26,7 @@ class PicturesController < ApplicationController
     @picture.user_id = current_user.id
 
     if @picture.save
+       NoticeMailer.notice_mail(@picture).deliver
       redirect_to new_picture_path, notice: "Share new yourpost"
     else
       render 'new'
