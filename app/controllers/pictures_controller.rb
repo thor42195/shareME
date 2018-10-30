@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
 
     if @picture.save
        NoticeMailer.notice_mail(@picture).deliver
-      redirect_to pictures_path, notice: "Share new yourpost"
+       redirect_to pictures_path, notice: "Share new yourpost"
     else
       render 'new'
     end

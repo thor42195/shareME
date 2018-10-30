@@ -1,4 +1,4 @@
-class NoticetMailer < ApplicationMailer
+class NoticeMailer < ApplicationMailer
   def notice_mail(blog)
      @picture = picture
      @user = @picture.user
