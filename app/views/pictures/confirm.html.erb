@@ -1,15 +1,15 @@
 <h1>以下の内容で、投稿する</h1>
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
-  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :postimage_cache %>
   <%= form.hidden_field :content %>
 
-  <%= image_tag(@picture.image.url) %>
+  <%= image_tag(@picture.postimage.url) %>
    <p><%= @picture.content %></p>
   <%= form.submit  "登録する" %>
 <% end %>
 
 <%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :postimage_cache %>
   <%= form.hidden_field :content %>
   <%= form.submit "もどる",name: 'back' %>
 <% end %>
