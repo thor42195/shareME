@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   end
   root to: 'top#index'
 
-  resources :pictures
+  resources :pictures do
+    collection do
+      post :confirm
+    end
+  end
   devise_for :users
   resources :users, only: %i(show)
   resources :favorites, only: [:create, :destroy]
