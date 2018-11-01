@@ -21,7 +21,7 @@
 				<% end %>
       </div>
       <div class="card-body">
-				<%= image_tag(picture.postimage.url, :class =>"card-image") if picture.postimage.url%>
+				<%= image_tag(picture.postimage, :class =>"card-image") if picture.postimage%>
 		 </div>
 		 <div class="card-header">
 			 <%= picture.content%>

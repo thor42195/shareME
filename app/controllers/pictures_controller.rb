@@ -1,12 +1,14 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only:[:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:new, :edit, :update, :destroy]
+
   def index
     @pictures = Picture.all
     @users = User.where.not(id: current_user.id)
   end
 
   def show
-    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
+    @favorites = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def new
@@ -59,5 +61,11 @@ class PicturesController < ApplicationController
 
     def set_picture
       @picture = Picture.find(params[:id])
+    end
+    def correct_user
+      user = User.find(params[:id])
+      if current_user != user
+        redirect_to root_path
+      end
     end
 end

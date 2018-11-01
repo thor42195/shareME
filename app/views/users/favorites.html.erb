@@ -1,0 +1,14 @@
+<div class='usershowPage'>
+  <div class="container">
+    <h2>お気に入り一覧</h2>
+  <div class="row">
+    <% @favorites_pictures.each do |favorites| %>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <%= image_tag(favorites.postimage.url) if favorites.postimage.url %>
+    <%end %>
+    </div>
+  </div>
+</div>
+</div>

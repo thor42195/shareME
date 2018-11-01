@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  resources :users, only: %i(show)
+  resources :users #, only: %i(show)
+  get '/users/favorites/:id', to:'users#favorites'
   resources :favorites, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

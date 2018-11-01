@@ -5,6 +5,10 @@
     </div>
     <% if current_user.id == @user.id %>
       <div class='userAction'>
+        <div class='userAction_favorite userAction_common'>
+          <%= link_to(content_tag(:i, "", class: 'fas fa-edit fa-2x'), :controller  => "users",:action => "favorites") %>
+          <span>お気に入り</span>
+        </div>
         <div class="userAction_edit userAction_common">
           <%= link_to(content_tag(:i, "", class: 'fas fa-edit fa-2x'), edit_user_registration_path) %>
           <span>情報を編集</span>
@@ -16,16 +20,4 @@
       </div>
     <% end %>
   </div>
-  <div class="container">
-    <h2>お気に入り一覧</h2>
-  <div class="row">
-    <% @favorites_pictures.each do |favorites| %>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <%= image_tag(favorites.postimage) if favorites.postimage %>
-    <%end %>
-    </div>
-  </div>
-</div>
 </div>
