@@ -1,6 +1,5 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only:[:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:new, :edit, :update, :destroy]
 
   def index
     @pictures = Picture.all
@@ -39,6 +38,10 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    @picture = Picture.find(params[:id])
+    if current_user != @picture
+      redirect_to root_path
+    end
   end
 
   def update
@@ -62,10 +65,5 @@ class PicturesController < ApplicationController
     def set_picture
       @picture = Picture.find(params[:id])
     end
-    def correct_user
-      user = User.find(params[:id])
-      if current_user != user
-        redirect_to root_path
-      end
-    end
+
 end
