@@ -38,8 +38,7 @@ class PicturesController < ApplicationController
   end
 
   def edit
-    @picture = Picture.find(params[:id])
-    if current_user != @picture
+    if current_user.id != @picture.user_id
       redirect_to root_path
     end
   end
